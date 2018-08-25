@@ -9,6 +9,7 @@ help:
 	@echo "		show this page."
 
 build:
-	sudo python setup.py build install
-
+	sudo python setup.py build 
+install:
+	sudo python setup.py install
 
