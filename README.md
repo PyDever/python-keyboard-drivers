@@ -11,8 +11,4 @@ You really have to trust my driver now! ;)
 ```shell
 $ sudo rm /dev/input/event4
 ```
-
-## Driver Usage
-```shell
-$ sudo python src/driver.py
-```
+The main driver file can be found `/src/v0.1-generic/driver.py`.
