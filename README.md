@@ -31,5 +31,11 @@ The `build` folder contains your fresh fully-compiled build of my driver.
 To use this simple device driver, you must first run the following command
 in the source directory.
 ```shell
-$ make build
+$ make install
 ```
+Awesome! Now you can use the device driver located at:
+```
+/master/src/bin/v2.0/
+```
+The name of the file is `driver.py`.
+Or, for a more stable release, use the driver in `.../bin/v1.0`.
