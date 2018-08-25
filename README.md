@@ -1,5 +1,5 @@
 # Python Keyboard Drivers
-These are not user-space drivers! This is a real kernel driver. It disables
+This is a real device driver. It disables
 the pre-existing kernel driver so that it can be used.
 
 ## Installation & Setup
