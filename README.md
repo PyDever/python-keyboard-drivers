@@ -27,7 +27,7 @@ $ make build
 ```
 The `build` folder contains your fresh fully-compiled build of my driver.
 
-## Using the keyboard driver
+## Using the keyboard driver properly
 To use this simple device driver, you must first run the following command
 in the source directory.
 ```shell
@@ -39,3 +39,15 @@ Awesome! Now you can use the device driver located at:
 ```
 The name of the file is `driver.py`.
 Or, for a more stable release, use the driver in `.../bin/v1.0`.
+
+## Using the keyboard driver as a library (not reccomended)
+To use this driver as a Python 2.7 library, repeat the above process accept move
+the following folder:
+```
+/python-keyboard-drivers/src/bin/v2.0/
+```
+(or a more stable release `.../bin/v1.0`) to this folder on Linux:
+```
+/usr/local/lib/python2.7/dist-packages/
+```
+
