@@ -1,14 +1,6 @@
 # Python Keyboard Drivers
-This is a real device driver. It disables
-the pre-existing kernel driver so that it can be used.
+In this repository I have a working Linux keyboard-driver written
+in 100% pure Python 2.7. It replaces the current kernel driver and should
+work on all Linux systems despite that fact that it has only been tested
+on Debian.
 
-## Installation & Setup
-```shell
-$ make build
-```
-WARNING: This will DISABLE the alternate kernel driver.
-You really have to trust my driver now! ;)
-```shell
-$ sudo rm /dev/input/event4
-```
-The main driver file can be found `/src/v0.1-generic/driver.py`.
