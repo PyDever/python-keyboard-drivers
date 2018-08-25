@@ -5,40 +5,16 @@ See README.md for building instructions
 and usage examples.
 """
 
-import evdev 	# coomunicate w/ kernel I/O interface
-import sys		# access system calls
+import evdev 		# coomunicate w/ kernel I/O interface
+import sys			# access system calls
+import interface 	# communicate w/ kernel I/O interface
+import device 	 	# create efficient device modules
 
-class device_driver_module (object):
+def list_devices ():
+	interface_communicator = interface.INTERFACE()
+	return interface_communicator._read_devices(interface_communicator)
 
-	def __init__ (self, device_file):
-		"""
-		initialize the device driver module
-		"""
-		self.device_file = device_file
-
-		# create device comm. object
-		self.device = evdev.InputDevice(
-			self.device_file)
-
-		# disable the default kernel driver
-		self.device.grab()
-
-		# file object for writing
-		# to the device file
-
-		# data structure to store 
-		# device file operations
-		"""required for kernel programming of any sort
-		not actually used, however"""
-		self.file_ops = {}
-
-	def _exit (self, exit_code):
-		"""
-		cleanup and relase device control
-		"""
-		sys.stdout.flush(); self.device.ungrab()
-		sys.exit(int(exit_code))
-
+class KEYBOARD_DRIVER (device.DEVICE):
 
 	def _read_keyb_events (self):
 		"""
@@ -59,6 +35,7 @@ class device_driver_module (object):
 				sys.stdout.write("%s" % str(error_messge))
 
 	def _write_keyb_events (self):
+
 		dev_obj = evdev.UInput()
 		"""
 		write keyb bytes to the device file
@@ -77,9 +54,9 @@ class device_driver_module (object):
 			except (OSError, Exception) as error_messge:
 				sys.stdout.write("%s" % str(error_messge))
 
+keyboard_driver = KEYBOARD_DRIVER()
 
-module = device_driver_module('/dev/input/event5')
-
-module._write_keyb_events()
-module._exit(0)
+keyboard_driver._detach_kernel_driver()
+keyboard_driver._write_keyb_events()
+keyboard_driver._exit()
 
