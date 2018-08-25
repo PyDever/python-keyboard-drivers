@@ -35,7 +35,7 @@ $ make install
 ```
 Awesome! Now you can use the device driver located at:
 ```
-/master/src/bin/v2.0/
+/python-keyboard-drivers/src/bin/v2.0/
 ```
 The name of the file is `driver.py`.
 Or, for a more stable release, use the driver in `.../bin/v1.0`.
