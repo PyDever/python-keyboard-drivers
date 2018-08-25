@@ -6,9 +6,8 @@ the pre-existing kernel driver so that it can be used.
 ```shell
 $ make build
 ```
-This will delte the alternate kernel driver.
-
-WARNING: You really have to trust my driver now! ;)
+WARNING: This will delte the alternate kernel driver.
+You really have to trust my driver now! ;)
 ```shell
 $ sudo rm /dev/input/event4
 ```
